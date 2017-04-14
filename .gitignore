@@ -15,3 +15,6 @@
 # vim
 **.swp
 **.swo
+
+# byebug
+.byebug_history
