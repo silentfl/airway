@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       get :takeoff_queue
     end
   end
+
+  get 'stats', to: 'statuses#index'
 end
