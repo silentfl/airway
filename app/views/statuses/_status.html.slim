@@ -1,0 +1,4 @@
+.item class="#{cycle('even', 'odd')}"
+  .datetime= I18n.l(status.created_at, format: "%y-%m-%d %H:%M:%S")
+  .number= status.aircraft.number
+  .status= I18n.t(status.status)
