@@ -6,8 +6,8 @@ class Aircraft < ActiveRecord::Base
 
   enum status: %i(on_base waiting fly)
 
-  scope :in_aeroport, ->{ where(status: Aircraft.statuses[:on_base]) }
-  scope :on_takeoff, ->{ where(status: Aircraft.statuses[:waiting]) }
+  scope :in_aeroport, ->{ where(status: Aircraft.statuses[:on_base]).order(:created_at) }
+  scope :on_takeoff, ->{ where(status: Aircraft.statuses[:waiting]).order(:updated_at) }
 
   after_save :create_status
 
