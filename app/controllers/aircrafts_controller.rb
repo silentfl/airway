@@ -1,6 +1,4 @@
 class AircraftsController < ApplicationController
-  respond_to :html, :js
-
   def index
     @aircrafts = Aircraft.in_aeroport
   end
