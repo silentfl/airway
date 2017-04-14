@@ -1,0 +1,6 @@
+.aircraft
+  .title= aircraft.number
+  .type= aircraft.airtype.name
+  .status= I18n.t(aircraft.status)
+  - if aircraft.on_base?
+    = button_to 'Взлет', { action: :takeoff, id: aircraft.id }, remote: true
