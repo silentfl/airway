@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(window).load ->
+  setInterval ->
+    update_queue()
+  , 1000
+
+update_queue = ->
+  $.get '/aircrafts/takeoff_queue', (data) ->
+    $('.takeoff_queue').show() if (!!data)
+    $('.queue').html data
