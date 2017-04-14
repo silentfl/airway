@@ -11,6 +11,6 @@ class Aircraft < ActiveRecord::Base
   def allow_takeoff
     self.status = :waiting
     self.save!
-    #TakeoffWorker.perform_async(id)
+    TakeoffWorker.perform_async(id)
   end
 end
